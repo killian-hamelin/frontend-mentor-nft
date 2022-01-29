@@ -1,0 +1,171 @@
+@import 'reset.css';
+
+:root {
+    --bg: #0D192C;
+    --border-color: #2E405A;
+    --card-bg: #15263F;
+    --blue: #8BACD9;
+    --white: #FFFFFF;
+    --accent: #00FFF8;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 8px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--accent);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg);
+
+    display: flex;
+    place-content: center;
+    place-items: center;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--blue);
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 350px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card__image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    max-width: 302px;
+    max-height: 302px;
+}
+
+.card__image:hover .card__image--hover {
+    opacity: 1;
+}
+
+.card__image--hover {
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #00FFF880;
+}
+
+.card__image--hover svg {
+    max-width: 44px;
+}
+
+.card__image img {
+    object-fit: cover;
+}
+
+.card__title {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: 8px;
+    color: var(--white);
+}
+
+.card__title:hover {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    color: var(--accent);
+}
+
+.card__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__information svg {
+    max-height: 18px;
+}
+
+.card__information > * {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+}
+
+.card__price {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.card__time {
+    justify-content: flex-end;
+}
+
+.card__time svg {
+    max-width: 16px;
+    max-height: 16px;
+}
+
+.card__owner {
+    position: relative;
+    padding-top: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card__owner strong {
+    color: var(--white);
+}
+
+.card__owner strong:hover {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    color: var(--accent);
+}
+
+.card__owner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.card__avatar {
+    max-width: 30px;
+    max-height: 30px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
